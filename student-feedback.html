@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4caf9b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .feedback-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feedback-container h2 {
+            color: #4cafaa;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none; /* Prevent resizing */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4cadaf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a095;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        function handleFeedbackSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+
+            // Show an alert to the user
+            alert("Thank you for your feedback!");
+
+            // Redirect to the student dashboard after clicking "OK" on the alert
+            window.location.href = "student-dashboard.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Student Feedback</h1>
+        <nav>
+            <ul>
+                <li><a href="student-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="feedback-container">
+        <h2>Your Feedback</h2>
+        <form id="student-feedback-form" onsubmit="handleFeedbackSubmit(event)">
+            <textarea placeholder="Write your feedback here..." required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: #4caf9b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .assignments-container {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .assignments-container h2 {
+            color: #4cafaa;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf9b;
+            color: white;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4cadaf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a095;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="edit-assignment.html">Edit Assignment</a></li>
+                <li><a href="grades.html">View Grades</a></li>
+                <li><a href="student-feedback.html">Feedback</a></li>
+                <li><a href="view-faculty-feedback.html">View Faculty Feedback</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="assignments-container">
+        <h2>Assignments Given by Faculty</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Assignment Id</th>
+                    <th>Assignment Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>JFSD</td>
+                    <td>How to create Spring Starter project.</td>
+                    <td>2024-10-05</td>
+                    <td><a href="submit-assignment.html"><button>Submit Assignment</button></a></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>MSWD</td>
+                    <td>Write a short note on React.js,Node.js,Mongodb.</td>
+                    <td>2024-10-12</td>
+                    <td><a href="submit-assignment.html"><button>Submit Assignment</button></a></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>PFSD</td>
+                    <td>How to build a simple web application using Flask and Javascript.</td>
+                    <td>2024-10-19</td>
+                    <td><a href="submit-assignment.html"><button>Submit Assignment</button></a></td>
+                </tr>
+                <!-- More assignments can be added here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

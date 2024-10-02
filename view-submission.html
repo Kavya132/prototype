@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Submissions</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4c96af;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .submission-container {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .submission-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4caaaf;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        .action-btn {
+            background-color: #4ca0af;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: #45a098;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        // Simulate fetching submission data (In a real app, this data comes from a backend API)
+        function loadSubmissions() {
+            const assignmentId = new URLSearchParams(window.location.search).get('assignmentId');
+            
+            // Example files for this assignmentId (In a real scenario, this would be fetched from the server)
+            const submissions = [
+                { id: 1, studentName: 'John Doe', fileName: 'assignment1_student1.pdf', fileUrl: 'uploads/assignment1_student1.pdf' },
+                { id: 2, studentName: 'Jane Smith', fileName: 'assignment1_student2.docx', fileUrl: 'uploads/assignment1_student2.docx' },
+                { id: 3, studentName: 'Tom Brown', fileName: 'assignment1_student3.txt', fileUrl: 'uploads/assignment1_student3.txt' }
+            ];
+
+            const submissionTable = document.getElementById('submission-table');
+            submissionTable.innerHTML = ''; // Clear table content
+
+            // Populate table with submission data
+            submissions.forEach(submission => {
+                const row = `
+                    <tr>
+                        <td>${submission.id}</td>
+                        <td>${submission.studentName}</td>
+                        <td>${submission.fileName}</td>
+                        <td>
+                            <a href="${submission.fileUrl}" class="action-btn" download>View File</a>
+                            <a href="evaluate-assignment.html?submissionId=${submission.id}" class="action-btn">Evaluate</a>
+                        </td>
+                    </tr>
+                `;
+                submissionTable.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        // Load submissions on page load
+        window.onload = loadSubmissions;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>View Student Submissions</h1>
+        <nav>
+            <ul>
+                <li><a href="faculty-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="submission-container">
+        <h2>Submissions for Assignment</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Submission ID</th>
+                    <th>Student Name</th>
+                    <th>File Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="submission-table">
+                <!-- Submissions will be populated here -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

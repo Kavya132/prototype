@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Faculty Feedback</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4caf9b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .feedback-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .feedback-container h2 {
+            color: #4cafaa;
+            margin-bottom: 20px;
+        }
+
+        .feedback {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .feedback strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>View Faculty Feedback</h1>
+        <nav>
+            <ul>
+                <li><a href="student-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="feedback-container">
+        <h2>Your Faculty Feedback</h2>
+
+        <div class="feedback">
+            <strong>Faculty: Dr. Smith</strong>
+            <strong>Assignment Id:003</strong>
+            <p>Great job on the last assignment! Your understanding of the material is evident. Keep up the good work!</p>
+        </div>
+
+        <div class="feedback">
+            <strong>Faculty: Prof. Johnson</strong>
+            <strong>Assignment Id:002</strong>
+            <p>I appreciate your effort in participating in class discussions. Your insights are valuable!</p>
+        </div>
+
+        <div class="feedback">
+            <strong>Faculty: Ms. Lee</strong>
+            <strong>Assignment Id:001</strong>
+            <p>Good progress on your projects! However, please pay attention to the details in your reports.</p>
+        </div>
+
+        <!-- Add more feedback display logic as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

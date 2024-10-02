@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4caf98;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #4cafa7;
+            margin-bottom: 20px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container input, 
+        .login-container select, 
+        .login-container button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-container select {
+            background-color: white;
+        }
+
+        .login-container button {
+            background-color: #4caf96;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .login-container button:hover {
+            background-color: #45a094;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const role = document.getElementById("role").value;
+
+            if (role === "student") {
+                window.location.href = "student-dashboard.html"; // Redirect to student dashboard
+            } else if (role === "faculty") {
+                window.location.href = "faculty-dashboard.html"; // Redirect to faculty dashboard
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <section class="login-container">
+        <h2>Login to Your Account</h2>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <label for="role">Select Role:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+            </select>
+            <input type="username" placeholder="Enter your username" required>
+            <input type="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="index.html">SignUp</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

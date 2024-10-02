@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: #4ca8af;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .dashboard h2 {
+            color: #4cafaf;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4ca8af;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .view-btn {
+            background-color: #4ca8af;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-btn:hover {
+            background-color: #3b8b9c;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        function viewSubmissions(assignmentId) {
+            // Redirect to view submission page with assignmentId as a query param
+            window.location.href = `view-submission.html?assignmentId=${assignmentId}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Faculty Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="give-assignment.html">Give Assignment</a></li>
+                <li><a href="edit-given-assignment.html">Edit Given Assignment</a></li>
+                <li><a href="view-student-feedback.html">View Student Feedback</a></li>
+                <li><a href="faculty-feedback.html">Feedback</a></li>
+                <li><a href="submission-count.html">Submission Count</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="dashboard">
+        <h2>Given Assignments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Assignment ID</th>
+                    <th>Assignment Title</th>
+                    <th>View Submissions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row with view submission button -->
+                <tr>
+                    <td>001</td>
+                    <td>JFSD</td>
+                    <td>
+                        <button class="view-btn" onclick="viewSubmissions(101)">View Submissions</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>MSWD</td>
+                    <td>
+                        <button class="view-btn" onclick="viewSubmissions(102)">View Submissions</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>PFSD</td>
+                    <td>
+                        <button class="view-btn" onclick="viewSubmissions(103)">View Submissions</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Assignment Submission & Grading System</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background-color: #4caf99;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .signup-container {
+            background-color: white;
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .signup-container h2 {
+            color: #4cafa3;
+            margin-bottom: 20px;
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-container input, 
+        .signup-container select, 
+        .signup-container button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .signup-container select {
+            background-color: white;
+        }
+
+        .signup-container button {
+            background-color: #4cafa3;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .signup-container button:hover {
+            background-color: #4598a0;
+        }
+
+        .signup-container a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault(); // Prevent the form from submitting the usual way
+
+            const role = document.getElementById("role").value;
+            const name = document.querySelector('input[type="text"]').value;
+
+            // For demonstration purposes, simply show an alert
+           
+
+            // Redirect to the login page after signup
+            window.location.href = "login.html"; // Redirect to the login page
+        }
+
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting the usual way
+
+            const role = document.getElementById("role").value;
+
+            // Based on the selected role, redirect to the appropriate dashboard
+            if (role === "student") {
+                window.location.href = "student-dashboard.html"; // Redirect to student dashboard
+            } else if (role === "faculty") {
+                window.location.href = "faculty-dashboard.html"; // Redirect to faculty dashboard
+            } else {
+                alert("Please select a valid role.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Online Assignment Submission & Grading System</h1>
+    </header>
+
+    <section class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" onsubmit="handleSignup(event)">
+            <label for="role">Select Role:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+            </select>
+            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Enter your username" required>
+            <input type="password" placeholder="Create a password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p> <!-- Link to login page -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

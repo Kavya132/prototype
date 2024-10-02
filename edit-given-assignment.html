@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Given Assignment</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4caf9b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .edit-assignment-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .edit-assignment-container h2 {
+            color: #4cafaa;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical; /* Allows vertical resizing only */
+            height: 100px; /* Initial height */
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4cadaf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a095;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        function handleEditAssignment(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Logic to save the edited assignment can be added here
+            alert("Assignment updated successfully!");
+            window.location.href = "faculty-dashboard.html"; // Redirect back to faculty dashboard
+        }
+
+        // Optional: Pre-fill the form with existing data
+        window.onload = function() {
+            document.getElementById("assignment-id").value = "123"; // Example assignment ID
+            
+            document.getElementById("assignment-description").value = "This is my original assignment description."; // Example description
+            document.getElementById("due-date").value = "2024-12-01"; // Example due date
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Edit Given Assignment</h1>
+        <nav>
+            <ul>
+                <li><a href="faculty-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="edit-assignment-container">
+        <h2>Edit Assignment</h2>
+        <form id="edit-assignment-form" onsubmit="handleEditAssignment(event)">
+            <label for="assignment-id">Assignment ID:</label>
+            <Select id="assignment-id" placeholder="Enter assignment Id" required>
+                <option>001</option>
+                <option>002</option>
+                <option>003</option>
+            </Select>
+
+           
+
+            <label for="assignment-description">Description:</label>
+            <textarea id="assignment-description" placeholder="Enter assignment description" required></textarea>
+
+            <label for="due-date">Due Date:</label>
+            <input type="date" id="due-date" required>
+
+            <button type="submit">Update Assignment</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

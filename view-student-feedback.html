@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Feedback</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4ca2af;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .feedback-container {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4cafa2;
+        }
+
+        .feedback {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .feedback:last-child {
+            border: none; /* Remove border from last feedback */
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #4ca2af;
+        }
+
+        .feedback-text {
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>View Student Feedback</h1>
+        <nav>
+            <ul>
+                <li><a href="faculty-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="feedback-container">
+        <h2>Feedback from Students</h2>
+        
+        <div class="feedback">
+            <span class="student-name">John Doe:</span>
+            <p class="feedback-text">The assignments were well-structured and helped me understand the subject better. I appreciate the clear instructions.</p>
+        </div>
+
+        <div class="feedback">
+            <span class="student-name">Jane Smith:</span>
+            <p class="feedback-text">I found the assignments challenging but fair. The topics covered were relevant and engaging.</p>
+        </div>
+
+        <div class="feedback">
+            <span class="student-name">Emily Johnson:</span>
+            <p class="feedback-text">I think the assignment deadlines were a bit tight. It would be helpful to have more time for completion.</p>
+        </div>
+
+        <div class="feedback">
+            <span class="student-name">Michael Brown:</span>
+            <p class="feedback-text">Overall, the assignments were great! They really helped reinforce the material we learned in class.</p>
+        </div>
+        
+        <div class="feedback">
+            <span class="student-name">Sophia Davis:</span>
+            <p class="feedback-text">I appreciated the variety in assignments. It made learning more enjoyable.</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>

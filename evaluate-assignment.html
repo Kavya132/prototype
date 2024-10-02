@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate Assignment</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4c96af;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .evaluate-assignment-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .evaluate-assignment-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4caaaf;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"], textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield; /* Firefox */
+            -webkit-appearance: none; /* Chrome, Safari, Edge */
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .assignment-info {
+            background-color: #e9f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4ca0af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a098;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        // Function to capture the query parameters (assignmentId and submissionId)
+        function loadAssignmentInfo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const assignmentId = urlParams.get('assignmentId');
+            const submissionId = urlParams.get('submissionId');
+            
+            if (assignmentId && submissionId) {
+                document.getElementById('assignment-info').innerText = `Assignment ID: ${assignmentId} | Submission ID: ${submissionId}`;
+            }
+        }
+
+        // Function to handle evaluation submission
+        function handleEvaluation(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            alert("Evaluation submitted successfully!"); // Alert the user
+            
+            window.location.href = "faculty-dashboard.html"; // Redirect to faculty dashboard
+        }
+
+        // Load assignment info on page load
+        window.onload = loadAssignmentInfo;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Evaluate Assignment</h1>
+        <nav>
+            <ul>
+                <li><a href="faculty-dashboard.html">Back to Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="evaluate-assignment-container">
+        <!-- Assignment Info will be displayed here -->
+        <div class="assignment-info" id="assignment-info">Loading assignment details...</div>
+
+        <h2>Evaluate Student Assignment</h2>
+        <form id="evaluate-assignment-form" onsubmit="handleEvaluation(event)">
+            <label for="grade">Grade:</label>
+            <input type="number" id="grade" aria-label="Enter grade" placeholder="Enter grade (out of 100)" required min="0" max="100">
+
+            <label for="feedback">Remarks:</label>
+            <textarea id="feedback" aria-label="Enter remarks" placeholder="Remarks" required></textarea>
+
+            <button type="submit">Submit Evaluation</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Assignment Submission & Grading System</p>
+    </footer>
+</body>
+</html>
